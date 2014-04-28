@@ -8,4 +8,4 @@ composer.lock
 *error_log
 /node_modules
 /app/config/remote.php
-/app/config/database.php
+/app/config/database.php/node_modules/node_modules

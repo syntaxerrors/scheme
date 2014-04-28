@@ -18,7 +18,7 @@ return array(
 	|
 	| Set this to the site's control room data.  Get this from stygian or riddles
 	*/
-	'controlRoomDetail' => 'GET_THIS_FROM_CONTROL',
+	'controlRoomDetail' => 'scheme',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ return array(
 	|
 	*/
 
-	'siteName' => 'YOUR_SITE',
+	'siteName' => 'Scheme',
 	'siteIcon' => null,
 
 	/*
@@ -80,10 +80,10 @@ return array(
 	| This variable is used to determine if the site uses the default twitter nav
 	| bar or any form of custom menu.  Set this value to the name of the blade
 	| located in views/layouts/menus that you wish to use.
-	| Options: twitter, utopian
+	| Options: twitter, twitter
 	|
 	*/
-	'menu' => 'utopian',
+	'menu' => 'twitter',
 
 	/*
 	|--------------------------------------------------------------------------

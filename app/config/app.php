@@ -38,7 +38,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://YOUR_SITE.com',
+	'url' => 'scheme.riddles.nukacode.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return array(
 	|
 	*/
 
-	'key' => 'V02hAzhfd9yh92PfWDlEgPYhnJBezvtH',
+	'key' => 'wJDRoaJgu2gj04e7WQjr9qG4UmmcSU9W',
 
 	/*
 	|--------------------------------------------------------------------------
