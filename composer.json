@@ -15,7 +15,8 @@
 		"syntax/core": "dev-master",
 		"anlutro/curl": "dev-master",
 		"doctrine/dbal": "*",
-		"vespakoen/menu": "dev-master"
+		"vespakoen/menu": "dev-master",
+		"iron-io/iron_mq": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

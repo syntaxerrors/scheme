@@ -29,4 +29,9 @@ Route::group(array('before' => 'auth|permission:SITE_ADMIN'), function()
 // Landing page
 Route::controller('/', 'HomeController');
 
+Route::post('/queueListener', function()
+{
+    return Queue::marshal();
+});
+
 require_once('start/local.php');
