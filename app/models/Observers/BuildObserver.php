@@ -25,7 +25,7 @@ class BuildObserver {
 
 			// Get all build objects and send a message to the queue to process them.
 			foreach ($this->build->buildObjects as $buildObject) {
-				Queue::push('Compiler', array('buildId' => $this->build->buildId, 'buildObjectId' => $buildObject->id), 'builder');
+				// Queue::push('BuildQueue@buildObject', array('buildId' => $this->build->buildId, 'buildObjectId' => $buildObject->id));
 			}
 
 			// Update the build to in progress.
@@ -37,7 +37,7 @@ class BuildObserver {
 			$this->updateBuildStatus('BUILD_PREP_ERROR');
 
 			// Delete all build files.
-			$this->build->cleanBuild();
+			// $this->build->cleanBuild();
 		}
 	}
 

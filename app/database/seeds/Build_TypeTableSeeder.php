@@ -4,24 +4,22 @@ class Build_TypeTableSeeder extends Seeder {
 
 	public function run()
 	{
+		Eloquent::unguard();
 		//DB::table('build_types')->delete();
 
-		// Model
-		Build_Type::create(array(
-				'name' => 'Model',
-				'keyName' => 'MODEL'
-			));
+		$new = new Build_Type;
+		$new->name = 'Model';
+		$new->keyName = 'MODEL';
+		$new->save();
 
-		// Seed
-		Build_Type::create(array(
-				'name' => 'Seed',
-				'keyName' => 'SEED'
-			));
+		$new = new Build_Type;
+		$new->name = 'Migration';
+		$new->keyName = 'MIGRATION';
+		$new->save();
 
-		// Migration
-		Build_Type::create(array(
-				'name' => 'Migration',
-				'keyName' => 'MIGRATION'
-			));
+		$new = new Build_Type;
+		$new->name = 'Seed';
+		$new->keyName = 'SEED';
+		$new->save();
 	}
 }

@@ -14,7 +14,7 @@ class CreateBuildsTable extends Migration {
 			$table->string('creatorId', 10)->index();
 			$table->string('projectId', 10)->index();
 			$table->string('buildId', 10)->index();
-			$table->integer('status')->index();
+			$table->string('status')->index();
 			$table->timestamps();
 			$table->softDeletes();
 		});

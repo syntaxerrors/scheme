@@ -19,7 +19,7 @@ class Project extends BaseModel {
 		$this->buildMigrations($builder);
 		$this->buildSeeds($builder);
 
-		$this->uppdateBuildStatus($builder, 'ready');
+		$this->uppdateBuildStatus($builder, 'READY');
 
 		return true;
 	}
@@ -41,7 +41,7 @@ class Project extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			$this->uppdateBuildStatus($builder, 'ready');
+			$this->uppdateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -64,7 +64,7 @@ class Project extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			$this->uppdateBuildStatus($builder, 'ready');
+			$this->uppdateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -87,7 +87,7 @@ class Project extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			$this->uppdateBuildStatus($builder, 'ready');
+			$this->uppdateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -96,10 +96,10 @@ class Project extends BaseModel {
 	public function createBuildInstance()
 	{
 		$builder = new Build;
-		$builder->ownerId = $this->activeUser->id;
-		$builder->ownerTypeId = 1; // right now user groups are not build in.
-		$builder->creatorId = $this->activeUser->id;
-		$builder->projectId = $this->id;
+		$builder->ownerId = 1;//$this->activeUser->id;
+		$builder->ownerType = 'user'; // right now user groups are not build in.
+		$builder->creatorId = 1;//$this->activeUser->id;
+		// $builder->projectId = $this->id;
 		$builder->buildId = str_random(10);
 		$builder->status = 'new';
 		$builder->save();

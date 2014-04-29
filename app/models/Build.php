@@ -12,5 +12,16 @@ class Build extends BaseModel {
 	}
 
 	// on status update create message to start build if status is ready.
+	
+	public function buildObjectsComplete()
+	{
+		foreach ($this->buildObjects as $buildObject) {
+			if ($buildObject->status != 'COMPLETE') {
+				return false;
+			}
+		}
+
+		return true;
+	}
 
 }

@@ -4,7 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.21",
+		"laravel/framework": "4.1.*",
 		"way/generators": "dev-master",
 		"wisembly/elephant.io": "dev-master",
 		"juy/profiler" : "dev-master",

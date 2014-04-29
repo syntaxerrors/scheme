@@ -41,7 +41,7 @@ class Table extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			 $this->project->uppdateBuildStatus($builder, 'ready');
+			 $this->project->uppdateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -61,7 +61,7 @@ class Table extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			 $this->project->uppdateBuildStatus($builder, 'ready');
+			 $this->project->uppdateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -81,7 +81,7 @@ class Table extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			 $this->project->uppdateBuildStatus($builder, 'ready');
+			 $this->project->uppdateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -92,8 +92,8 @@ class Table extends BaseModel {
 		$buildObject = new Build_Object;
 		$buildObject->buildId = $builder->id;
 		$buildObject->tableId = $this->id;
-		$buildObject->type->keyName = $buildType;
-		$buildObject->status = 'ready';
+		$buildObject->typeId = 1;// = $buildType;
+		$buildObject->status = 'READY';
 		$buildObject->save();
 
 		return $buildObject;
