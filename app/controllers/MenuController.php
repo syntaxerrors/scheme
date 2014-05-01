@@ -9,6 +9,9 @@ class MenuController extends Core_BaseController
 			->add('/', 'Home');
 
 		if (Auth::check()) {
+			Menu::handler('main')
+				->add('/project', 'Projects');
+
 			// Manage Menu
 			if ($this->hasPermission('DEVELOPER')) {
 				Menu::handler('mainRight')
@@ -29,8 +32,8 @@ class MenuController extends Core_BaseController
 				->add('/forgotPassword', 'Forgot Password');
 		}
 
-		Menu::handler('main')
-			->add('/memberlist', 'Memberlist');
+		// Menu::handler('main')
+		// 	->add('/memberlist', 'Memberlist');
 	}
 
 	public function setAreaDetails($area)

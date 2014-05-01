@@ -8,7 +8,7 @@ class Table_Seed extends BaseModel {
 
 	public function template()
 	{
-		return $this->belongsTo('Template');
+		return $this->belongsTo('Template', 'templateId');
 	}
 
 }

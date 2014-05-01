@@ -6,4 +6,7 @@ class Build_Type extends BaseModel {
 	public $timestamps = true;
 	protected $softDelete = true;
 
+
+	protected $fillable = array('name', 'keyName');
+
 }

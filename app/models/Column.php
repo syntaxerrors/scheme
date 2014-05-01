@@ -8,13 +8,13 @@ class Column extends BaseModel {
 
 	public function type()
 	{
-		return $this->hasOne('Column_Type');
+		return $this->belongsTo('Column_Type', 'typeId');
 	}
 
 
 	public function table()
 	{
-		return $this->belongsTo('Table');
+		return $this->belongsTo('Table', 'tableId');
 	}
 
 }

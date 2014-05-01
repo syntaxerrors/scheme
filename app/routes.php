@@ -1,5 +1,10 @@
 <?php
 
+Route::post('buildQueue', function()
+{
+    return Queue::marshal();
+});
+
 // Let them logout
 Route::get('logout', function()
 {
@@ -16,6 +21,9 @@ Route::group(array('before' => 'auth'), function()
 	Route::controller('user'	, 'Core_UserController');
 	Route::controller('messages', 'Core_MessageController');
 	Route::controller('github'	, 'Core_GithubController');
+
+	Route::controller('scheme'	, 'SchemeController');
+	Route::controller('project'	, 'ProjectController');
 });
 
 /********************************************************************
@@ -28,10 +36,5 @@ Route::group(array('before' => 'auth|permission:SITE_ADMIN'), function()
 
 // Landing page
 Route::controller('/', 'HomeController');
-
-Route::post('/queueListener', function()
-{
-    return Queue::marshal();
-});
 
 require_once('start/local.php');

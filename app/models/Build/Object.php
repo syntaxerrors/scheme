@@ -8,12 +8,12 @@ class Build_Object extends BaseModel {
 
 	public function build()
 	{
-		return $this->belongsTo('Build');
+		return $this->belongsTo('Build', 'buildId');
 	}
 
 	public function type()
 	{
-		return $this->belongsTo('Build_Type');
+		return $this->belongsTo('Build_Type', 'buildTypeId');
 	}
 
 }

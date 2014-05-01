@@ -8,22 +8,22 @@ class Table extends BaseModel {
 
 	public function columns()
 	{
-		return $this->hasMany('Column');
+		return $this->hasMany('Column', 'tableId');
 	}
 
 	public function project()
 	{
-		return $this->belongsTo('Project');
+		return $this->belongsTo('Project', 'projectId');
 	}
 
 	public function template()
 	{
-		return $this->belongsTo('Template');
+		return $this->belongsTo('Template', 'tableTemplateId');
 	}
 
 	public function seed()
 	{
-		return $this->hasOne('Table_Seed');
+		return $this->hasOne('Table_Seed', 'tableId');
 	}
 
 
@@ -89,10 +89,12 @@ class Table extends BaseModel {
 
 	public function createBuildObjectInstance(Build $builder, $buildType)
 	{
+		$buildType = Build_Type::where('keyName', '=', $buildType)->first();
+
 		$buildObject = new Build_Object;
 		$buildObject->buildId = $builder->id;
 		$buildObject->tableId = $this->id;
-		$buildObject->typeId = 1;// = $buildType;
+		$buildObject->buildTypeId = $buildType->id;// = $buildType;
 		$buildObject->status = 'READY';
 		$buildObject->save();
 

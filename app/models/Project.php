@@ -8,7 +8,21 @@ class Project extends BaseModel {
 
 	public function tables()
 	{
-		return $this->hasMany('Table');
+		return $this->hasMany('Table', 'projectId');
+	}
+
+	public function owner()
+	{
+		if ( $this->ownerType == 'user' ) {
+			return $this->belongsTo('User', 'ownerId');
+		} else {
+			return $this->belongsTo('Group', 'ownerId');
+		}
+	}
+
+	public function creator()
+	{
+		return $this->belongsTo('User', 'creatorId');
 	}
 
 	public function buildAll()
@@ -114,4 +128,5 @@ class Project extends BaseModel {
 
 		return $builder;
 	}
+
 }

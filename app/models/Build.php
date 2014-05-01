@@ -8,7 +8,7 @@ class Build extends BaseModel {
 
 	public function buildObjects()
 	{
-		return $this->hasMany('Build_Object');
+		return $this->hasMany('Build_Object', 'buildId');
 	}
 
 	// on status update create message to start build if status is ready.
