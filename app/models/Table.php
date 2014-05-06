@@ -1,4 +1,5 @@
 <?php
+// add require keys on relationships
 
 class Table extends BaseModel {
 
@@ -6,14 +7,14 @@ class Table extends BaseModel {
 	public $timestamps = true;
 	protected $softDelete = true;
 
-	public function columns()
-	{
-		return $this->hasMany('Column', 'tableId');
-	}
-
 	public function project()
 	{
 		return $this->belongsTo('Project', 'projectId');
+	}
+
+	public function columns()
+	{
+		return $this->hasMany('Column', 'tableId');
 	}
 
 	public function template()
@@ -26,6 +27,20 @@ class Table extends BaseModel {
 		return $this->hasOne('Table_Seed', 'tableId');
 	}
 
+	public function local()
+	{
+		return $this->hasMany('Relationship', 'localTableId');
+	}
+
+	public function foreign()
+	{
+		return $this->hasMany('Relationship', 'foreignTableId');
+	}
+
+	public function through()
+	{
+		return $this->hasMany('Relationship', 'throughTableId');
+	}
 
 	public function buildModels(Build $builder = null)
 	{

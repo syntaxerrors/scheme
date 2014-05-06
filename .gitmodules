@@ -67,3 +67,6 @@
 [submodule "public/vendor/Gallery"]
 	path = public/vendor/Gallery
 	url = git@github.com:blueimp/Gallery.git
+[submodule "public/vendor/jsPlumb"]
+	path = public/vendor/jsPlumb
+	url = git@github.com:sporritt/jsPlumb.git

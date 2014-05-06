@@ -22,7 +22,6 @@ Route::group(array('before' => 'auth'), function()
 	Route::controller('messages', 'Core_MessageController');
 	Route::controller('github'	, 'Core_GithubController');
 
-	Route::controller('scheme'	, 'SchemeController');
 	Route::controller('project'	, 'ProjectController');
 });
 

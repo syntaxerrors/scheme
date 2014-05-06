@@ -1,5 +1,11 @@
 <div class="panel panel-default">
-	<div class="panel-heading">Your Projects</div>
+	<div class="panel-heading">
+		Your Projects
+		<div class="panel-btn">
+			{{ HTML::linkIcon('/project/create/', 'fa fa-plus', null) }}
+		</div>
+	</div>
+
 	<table class="table table-hover table-condensed">
 		<thead>
 			<tr>

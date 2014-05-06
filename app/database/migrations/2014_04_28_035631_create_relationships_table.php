@@ -18,7 +18,9 @@ class CreateRelationshipsTable extends Migration {
 			$table->integer('throughKeyId')->nullable()->index();
 			$table->integer('typeId')->index();
 			$table->tinyInteger('namespaceFlag')->default(0);
-			$table->string('extraMethods', 150);
+			$table->string('extraMethods', 150)->nullable();
+			$table->tinyInteger('requireKeysFlag')->default(0);
+			$table->tinyInteger('errorCheckingFlag')->default(0);
 			$table->timestamps();
 			$table->softDeletes();
 		});

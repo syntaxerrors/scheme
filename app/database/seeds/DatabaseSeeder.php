@@ -8,5 +8,8 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('Build_TypeTableSeeder');
 		$this->command->info('Build_Type table seeded!');
+
+		$this->call('Build_ColumnTypeSeeder');
+		$this->command->info('Column_Type table seeded!');
 	}
 }
