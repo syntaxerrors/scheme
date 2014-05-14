@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'default' => 'sync',
+	'default' => 'iron',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -50,9 +50,9 @@ return array(
 
 		'iron' => array(
 			'driver'  => 'iron',
-			'project' => 'your-project-id',
-			'token'   => 'your-token',
-			'queue'   => 'your-queue-name',
+			'project' => '535dfc8c20fa16000900007e',
+			'token'   => 'qqs6WTPl2nKNfPchS7sCTwS0ksk',
+			'queue'   => 'builder',
 		),
 
 		'redis' => array(
