@@ -11,6 +11,11 @@
  * @version     0.1
  */
 
+function getInputData($name)
+{
+    // we should get old data and database fileds all in one method.
+}
+
 /**
  * Print Pre data.
  *

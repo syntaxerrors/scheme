@@ -203,8 +203,41 @@ class ProjectController extends Core_HomeController {
         // return true;
     }
 
-    public function postUpdateColumnOrder($table, $order)
+    public function getDeleteColumn($columnId)
     {
+        $column = Column::with([
+            'type',
+            'local',
+            'local.type',
+            'foreign',
+            'foreign.type',
+            'through',
+            'through.type'
+        ])->find($columnId);
+
+        $this->setViewData('column', $column);
+    }
+
+    public function postDeleteColumn()
+    {
+        $input = Input::all();
+
+        $column = Column::find($input['columnId']);
+
+        if ( $column->loacl->count() > 0) {
+            $column->local->delete();
+        }
+
+        if ( $column->foreign->count() > 0) {
+            $column->foreign->delete();
+        }
+
+        if ( $column->through->count() > 0) {
+            $column->through->delete();
+        }
+
+        $column->delete();
 
     }
+
 }

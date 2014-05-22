@@ -20,7 +20,7 @@
 									{{ $column->type->name }} ( {{ $column->value }} )
 								</td>
 								<td>
-									<i class='fa fa-edit'></i> <i class='fa fa-times'></i>
+									<i class='fa fa-edit'></i> <a href="/project/delete-column/{{ $column->id }}"><i class='fa fa-times'></i></a>
 								</td>
 							</tr>
 						@endforeach

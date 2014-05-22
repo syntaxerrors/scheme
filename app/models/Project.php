@@ -33,7 +33,7 @@ class Project extends BaseModel {
 		$this->buildMigrations($builder);
 		$this->buildSeeds($builder);
 
-		$this->uppdateBuildStatus($builder, 'READY');
+		$this->updateBuildStatus($builder, 'READY');
 
 		return true;
 	}
@@ -55,7 +55,7 @@ class Project extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			$this->uppdateBuildStatus($builder, 'READY');
+			$this->updateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -78,7 +78,7 @@ class Project extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			$this->uppdateBuildStatus($builder, 'READY');
+			$this->updateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -101,7 +101,7 @@ class Project extends BaseModel {
 
 		// If the build was created by this method ready the build otherwise just exit.
 		if ( $readyBuild == true ) {
-			$this->uppdateBuildStatus($builder, 'READY');
+			$this->updateBuildStatus($builder, 'READY');
 		}
 
 		return true;
@@ -121,7 +121,7 @@ class Project extends BaseModel {
 		return $builder;
 	}
 
-	public function uppdateBuildStatus(Build $builder, $status)
+	public function updateBuildStatus(Build $builder, $status)
 	{
 		$builder->status = $status;
 		$builder->save();

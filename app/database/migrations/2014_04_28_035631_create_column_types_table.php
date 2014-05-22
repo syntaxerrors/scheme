@@ -11,6 +11,7 @@ class CreateColumnTypesTable extends Migration {
 			$table->increments('id');
 			$table->string('name', 50);
 			$table->string('keyName', 50);
+			$table->integer('catagoryId')->index();
 			$table->timestamps();
 			$table->softDeletes();
 		});
